@@ -2,6 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static Constants.DataConstants.Fact;
 
 public class Fact
 {
@@ -9,10 +10,11 @@ public class Fact
     public int Id { get; set; }
 
     [Required]
+    [MaxLength(TitleMaxLength)]
     public string Title { get; set; } = string.Empty;
 
-    [Required] 
-    public string Description { get; set; } = string.Empty;
+    [MaxLength(DescriptionMaxLength)]
+    public string? Description { get; set; } = string.Empty;
 
     public DateTime? Date { get; set; }
 

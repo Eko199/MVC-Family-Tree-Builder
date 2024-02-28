@@ -2,6 +2,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static Constants.DataConstants.Person;
 
 public class Person
 {
@@ -9,9 +10,11 @@ public class Person
     public int Id { get; set; }
 
     [Required]
+    [MaxLength(FirstNameMaxLength)]
     public string FirstName { get; set; } = string.Empty;
 
-    [Required] 
+    [Required]
+    [MaxLength(LastNameMaxLength)]
     public string LastName { get; set; } = string.Empty;
 
     [Required]
@@ -27,6 +30,7 @@ public class Person
 
     public DateTime? DeathDate { get; set; }
 
+    [MaxLength(BiographyMaxLength)]
     public string? Biography { get; set; }
 
     public int? FatherId { get; set; }

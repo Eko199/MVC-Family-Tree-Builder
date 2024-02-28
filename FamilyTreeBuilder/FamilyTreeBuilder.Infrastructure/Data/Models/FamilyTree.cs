@@ -3,6 +3,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using static Constants.DataConstants.FamilyTree;
 
 public class FamilyTree
 {
@@ -10,8 +11,10 @@ public class FamilyTree
     public int Id { get; set; }
 
     [Required]
+    [MaxLength(TitleMaxLength)]
     public string Title { get; set; } = string.Empty;
 
+    [MaxLength(DescriptionMaxLength)]
     public string? Description { get; set; }
 
     [Required] 
