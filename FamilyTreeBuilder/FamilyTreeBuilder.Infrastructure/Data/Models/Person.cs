@@ -25,7 +25,7 @@ public class Person
     [Comment("Identifier of gender entity")]
     public int GenderId { get; set; }
 
-    [ForeignKey(nameof(Gender))]
+    [ForeignKey(nameof(GenderId))]
     public Gender Gender { get; set; } = null!;
 
     [Required]
@@ -54,8 +54,10 @@ public class Person
     [ForeignKey(nameof(MotherId))]
     public Person? Mother { get; set; }
 
+    [NotMapped]
     public ICollection<Relationship> Relationships { get; set; } = new HashSet<Relationship>();
 
+    [NotMapped]
     public ICollection<Person> Children { get; set; } = new HashSet<Person>();
 
     public ICollection<Fact> Facts { get; set; } = new HashSet<Fact>();
