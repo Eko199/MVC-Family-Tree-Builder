@@ -1,5 +1,6 @@
 ﻿namespace FamilyTreeBuilder.Infrastructure.Data;
 
+using Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Models;
@@ -24,10 +25,14 @@ public class FamilyTreeBuilderDbContext : IdentityDbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Relationship>()
-            .HasOne(r => r.Person1)
-            .WithMany(p => p.Relationships)
-            .OnDelete(DeleteBehavior.Restrict);
+        builder
+            .ApplyConfiguration(new UserConfiguration())
+            .ApplyConfiguration(new GenderConfiguration())
+            .ApplyConfiguration(new RelationshipTypeConfiguration())
+            .ApplyConfiguration(new PersonConfiguration())
+            .ApplyConfiguration(new RelationshipConfiguration())
+            .ApplyConfiguration(new FactConfiguration())
+            .ApplyConfiguration(new FamilyTreeConfiguration());
 
         base.OnModelCreating(builder);
     }
