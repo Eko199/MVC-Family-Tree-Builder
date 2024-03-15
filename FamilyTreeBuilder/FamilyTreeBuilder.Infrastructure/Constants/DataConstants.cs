@@ -43,4 +43,8 @@ public static class DataConstants
         public const int NameMinLength = 5;
         public const int NameMaxLength = 30;
     }
+
+    //Error messages:
+
+    public const string StringLengthErrorMessage = "The field {0} must be between {2} and {1} characters long!";
 }
