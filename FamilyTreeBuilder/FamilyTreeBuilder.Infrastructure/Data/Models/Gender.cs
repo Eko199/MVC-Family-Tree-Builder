@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using static Constants.DataConstants.Gender;
 
+[Comment("Person gender")]
 public class Gender
 {
     [Key]

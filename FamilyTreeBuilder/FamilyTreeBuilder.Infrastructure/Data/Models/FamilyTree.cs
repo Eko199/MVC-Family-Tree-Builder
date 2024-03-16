@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using static Constants.DataConstants.FamilyTree;
 
+[Comment("Family tree to store all people")]
 public class FamilyTree
 {
     [Key]

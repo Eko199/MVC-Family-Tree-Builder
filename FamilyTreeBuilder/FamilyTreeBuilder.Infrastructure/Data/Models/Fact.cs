@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using static Constants.DataConstants.Fact;
 
+[Comment("Person fact")]
 public class Fact
 {
     [Key]

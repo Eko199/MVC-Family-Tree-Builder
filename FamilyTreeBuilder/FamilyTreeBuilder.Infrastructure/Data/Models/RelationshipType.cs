@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using static Constants.DataConstants.RelationshipType;
 
+[Comment("Type of relationship between two people")]
 public class RelationshipType
 {
     [Key]
