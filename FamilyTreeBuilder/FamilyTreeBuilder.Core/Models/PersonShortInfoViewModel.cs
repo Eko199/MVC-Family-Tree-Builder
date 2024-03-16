@@ -1,8 +1,5 @@
 ﻿namespace FamilyTreeBuilder.Core.Models;
 
-using System.ComponentModel.DataAnnotations;
-using static Infrastructure.Constants.DataConstants;
-
 /// <summary>
 /// Model for visualization of person main stats
 /// </summary>
@@ -16,15 +13,11 @@ public class PersonShortInfoViewModel
     /// <summary>
     /// Person first name
     /// </summary>
-    [Required]
-    [StringLength(Person.FirstNameMaxLength, MinimumLength = Person.FirstNameMinLength, ErrorMessage = StringLengthErrorMessage)]
     public string FirstName { get; set; } = string.Empty;
 
     /// <summary>
     /// Person family name
     /// </summary>
-    [Required]
-    [StringLength(Person.LastNameMaxLength, MinimumLength = Person.LastNameMinLength, ErrorMessage = StringLengthErrorMessage)]
     public string LastName { get; set; } = string.Empty;
     
     /// <summary>
@@ -35,7 +28,6 @@ public class PersonShortInfoViewModel
     /// <summary>
     /// True if the person has died
     /// </summary>
-    [Required]
     public bool IsDeceased { get; set; }
 
     /// <summary>
